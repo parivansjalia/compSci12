@@ -24,7 +24,7 @@ public class FootTest extends JPanel
     int x = 300;
     int y = 100;
     int stepLength = 100;
-
+// 
     Foot foot = new Foot(x, y, shoe);
 
     //6 Part A
@@ -61,6 +61,7 @@ public class FootTest extends JPanel
       foot.moveForward(50);
       
     }
+
 
     // Draw a cursor at the expected center of the first "shoe":
     g.drawLine(x - 50, y, x + 50, y);

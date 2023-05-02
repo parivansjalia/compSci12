@@ -9,7 +9,7 @@ public class WalkingGroup implements StudentGroup
 
 //added cat as a walker
 
-  private Bystander cat;
+  private sixCircle cat;
 
   private Image leftWomansShoe, rightWomansShoe;
   private Image leftMansShoe, rightMansShoe;
@@ -45,13 +45,13 @@ public class WalkingGroup implements StudentGroup
     {
       amy = new Walker(x, y - height / 5, leftWomansShoe, rightWomansShoe);
       ben = new Walker(x, y + height / 5, leftMansShoe, rightMansShoe);
-      cat = new Bystander(x, y, leftPaw, rightPaw);
+      cat = new sixCircle(x, y, leftPaw, rightPaw);
     }
     else
     {
       amy = new Walker(x, y + height / 5, leftWomansShoe, rightWomansShoe);
       ben = new Walker(x, y - height / 5, leftMansShoe, rightMansShoe);
-      cat = new Bystander(x, y, leftPaw, rightPaw);
+      cat = new sixCircle(x, y, leftPaw, rightPaw);
     }
     currentState = State.READY;
     danceFloor.update(this);
@@ -75,7 +75,7 @@ public class WalkingGroup implements StudentGroup
         amy.nextStep();
         ben.nextStep();
         cat.nextStep();
-        cat.draw(g);
+        
         stepsCount++;
       }
       else
@@ -83,7 +83,7 @@ public class WalkingGroup implements StudentGroup
         amy.stop();
         ben.stop();
         cat.stop();
-        cat.draw(g);
+        
         currentState = State.STOPPED;
       }
     }

@@ -23,14 +23,15 @@ public class FootTest extends JPanel
 
     int x = 300;
     int y = 100;
-    int stepLength = 100;
+    int stepLength = 80;
 
     Foot foot = new Foot(x, y, shoe);
 
-    for (int count = 1; count <= 8; count++)
+    for (int count = 1; count <= 6; count++)
     {
       foot.draw(g);
-      foot.turn(45);
+      foot.turn(60);
+      foot.moveSideways(-50);
       foot.moveForward(stepLength);
     }
 

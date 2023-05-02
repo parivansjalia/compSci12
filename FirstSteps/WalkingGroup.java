@@ -6,8 +6,10 @@ public class WalkingGroup implements StudentGroup
 {
   private Walker amy;
   private Walker ben;
+  private circle cat;
   private Image leftWomansShoe, rightWomansShoe;
   private Image leftMansShoe, rightMansShoe;
+  private Image leftFoot, rightFoot;
 
   private DanceFloor danceFloor;
 
@@ -23,6 +25,8 @@ public class WalkingGroup implements StudentGroup
     rightWomansShoe = (new ImageIcon("rightsandal.gif")).getImage();
     leftMansShoe = (new ImageIcon("leftshoe.gif")).getImage();
     rightMansShoe = (new ImageIcon("rightshoe.gif")).getImage();
+    leftFoot = (new ImageIcon("leftshoe.gif")).getImage();
+    rightFoot = (new ImageIcon("rightshoe.gif")).getImage();
   }
 
   // Sets up this group of participants
@@ -37,11 +41,13 @@ public class WalkingGroup implements StudentGroup
     {
       amy = new Walker(x, y - height / 5, leftWomansShoe, rightWomansShoe);
       ben = new Walker(x, y + height / 5, leftMansShoe, rightMansShoe);
+      cat = new circle(x, y, leftFoot, rightFoot);
     }
     else
     {
       amy = new Walker(x, y + height / 5, leftWomansShoe, rightWomansShoe);
       ben = new Walker(x, y - height / 5, leftMansShoe, rightMansShoe);
+      cat = new circle(x, y, leftFoot, rightFoot);
     }
     currentState = State.READY;
     danceFloor.update(this);
@@ -54,6 +60,7 @@ public class WalkingGroup implements StudentGroup
     {
       amy.firstStep();
       ben.firstStep();
+      cat.firstStep();
       currentState = State.MOVING;
       stepsCount = 0;
     }
@@ -63,12 +70,14 @@ public class WalkingGroup implements StudentGroup
       {
         amy.nextStep();
         ben.nextStep();
+        cat.nextStep();
         stepsCount++;
       }
       else
       {
         amy.stop();
         ben.stop();
+        cat.stop();
         currentState = State.STOPPED;
       }
     }
@@ -81,6 +90,7 @@ public class WalkingGroup implements StudentGroup
   {
     amy.draw(g);
     ben.draw(g);
+    cat.draw(g);
   }
 }
 

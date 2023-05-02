@@ -1,0 +1,10 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "FirstSteps 2/DanceStudio.jar"
+    ],
+    "java.project.sourcePaths": [
+        "PieChart",
+        "FirstSteps 2"
+    ]
+}
